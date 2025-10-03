@@ -9,7 +9,11 @@ require("dotenv").config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5500' })); // Adjust origin if needed
+app.use(cors({ 
+    origin: ['https://pethealthwebsite-frontend.vercel.app', 'http://localhost:5500'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+}));
 
 // --- File Path ---
 // 🛑 CHANGE 2: Consolidate to a single file path
