@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Healthcare Management System - Dogs & Cats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="nav">
+            <a class="nav__brand logo" href="#" data-page="home" aria-label="Go to homepage">
+                <svg class="logo__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="20" cy="12" r="6" fill="currentColor"/>
+                    <circle cx="28" cy="12" r="6" fill="currentColor"/>
+                    <circle cx="16" cy="20" r="5" fill="currentColor"/>
+                    <circle cx="32" cy="20" r="5" fill="currentColor"/>
+                    <ellipse cx="24" cy="30" rx="8" ry="10" fill="currentColor"/>
+                    <rect x="22" y="26" width="4" height="8" fill="white"/>
+                    <rect x="20" y="28" width="8" height="4" fill="white"/>
+                </svg>
+                <span class="logo__text">Pet Healthcare</span>
+            </a>
+            <div class="nav__menu">
+                <a href="#" class="nav__link" data-page="home">Home</a>
+                <a href="#" class="nav__link" data-page="services">Services</a>
+                <a href="#" class="nav__link" data-page="dashboard">Health Dashboard</a>
+            </div>
+            <div class="nav__actions">
+                <button class="nav__link" data-page="login">Login</button>
+                <button class="btn btn--primary" data-page="signup" id="getStartedBtn">Get Started</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Homepage -->
+    <main class="page page--active" id="home">
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">Premium Healthcare for Dogs & Cats</h1>
+                <h2 class="hero__subtitle">Complete Care Solutions</h2>
+                <p class="hero__description">Specialized care, expert appointments, adoption services, breed-specific diet planning, and comprehensive health monitoring for your beloved dogs and cats.</p>
+                <div class="hero__actions">
+                    <button class="btn btn--primary btn--lg" data-page="services">Explore Services</button>
+                    <button class="btn btn--outline btn--lg" data-page="signup">Get Started</button>
+                </div>
+            </div>
+            <div class="hero__preview">
+                <div class="preview-card">
+                    <div class="preview-card__header">
+                        <div class="preview-card__title">Pet Health Dashboard</div>
+                        <div class="preview-card__status status status--success">Active</div>
+                    </div>
+                    <div class="preview-card__content">
+                        <div class="metric">
+                            <div class="metric__label">Activity Level</div>
+                            <div class="metric__value">75%</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric__label">Sleep Quality</div>
+                            <div class="metric__value">82%</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric__label">Overall Wellness</div>
+                            <div class="metric__value">68%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Services Page -->
+    <main class="page" id="services">
+        <section class="services-hero">
+            <div class="container">
+                <h1 class="services-hero__title">Specialized Dog & Cat Healthcare</h1>
+                <p class="services-hero__description">Professional veterinary care designed specifically for dogs and cats</p>
+            </div>
+        </section>
+        
+        <section class="services-grid">
+            <div class="container">
+                <div class="services__cards">
+                    <div class="service-card" data-service="dashboard">
+                        <div class="service-card__icon">📊</div>
+                        <h3 class="service-card__title">Pet Health Dashboard</h3>
+                        <p class="service-card__description">Comprehensive health monitoring with activity tracking, vital signs, vaccination schedules, and medical history management for dogs and cats.</p>
+                        <button class="btn btn--primary" data-page="dashboard">View Dashboard</button>
+                    </div>
+                    
+                    <div class="service-card" data-service="appointments">
+                        <div class="service-card__icon">📅</div>
+                        <h3 class="service-card__title">Pet Appointments</h3>
+                        <p class="service-card__description">Schedule appointments with our qualified veterinarians specializing in dog and cat care for checkups, treatments, and emergency care.</p>
+                        <button class="btn btn--primary" data-page="appointments">Book Appointment</button>
+                    </div>
+                    
+                    <div class="service-card" data-service="adoption">
+                        <div class="service-card__icon">❤️</div>
+                        <h3 class="service-card__title">Dog & Cat Adoption</h3>
+                        <p class="service-card__description">Help dogs and cats find loving homes through our comprehensive adoption matching service.</p>
+                        <button class="btn btn--primary" data-page="adoption">Start Adoption</button>
+                    </div>
+                    
+                    <div class="service-card" data-service="diet">
+                        <div class="service-card__icon">🍽️</div>
+                        <h3 class="service-card__title">Nutrition Planner</h3>
+                        <p class="service-card__description">Create personalized nutrition plans with breed-specific considerations and specialized dietary requirements for dogs and cats.</p>
+                        <button class="btn btn--primary" data-page="diet-planner">Plan Diet</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pet Health Dashboard -->
+    <main class="page" id="dashboard">
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#" data-page="services">Services</a> > Pet Health Dashboard
+                </div>
+                <h1 class="page-title">Pet Health Dashboard</h1>
+                <p class="page-description">Monitor your dog or cat's health, activity, and wellness in real-time</p>
+            </div>
+        </section>
+        
+        <section class="dashboard-content">
+            <div class="container">
+                <!-- Pet Selection -->
+                <div class="pet-selector">
+                    <label for="petSelect" class="form-label">Select Pet:</label>
+                    <select id="petSelect" class="form-control pet-select">
+                        <option value="buddy">Buddy - Golden Retriever</option>
+                        <option value="whiskers">Whiskers - Persian Cat</option>
+                        <option value="max">Max - German Shepherd</option>
+                    </select>
+                </div>
+
+                <!-- Pet Profile Section -->
+                <div class="pet-profile">
+                    <h2>Pet Profile</h2>
+                    <div class="pet-profile-card">
+                        <div class="pet-image" id="currentPetImage"></div>
+                        <div class="pet-info">
+                            <h3 id="petProfileName">Buddy</h3>
+                            <p id="petProfileBreed">Golden Retriever</p>
+                            <p id="petProfileAge">3 years old</p>
+                            <p id="petProfileWeight">28.5 lbs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Overview Cards -->
+                <div class="health-overview">
+                    <h2>Health Overview</h2>
+                    <div class="health-cards">
+                        <div class="health-card">
+                            <div class="health-card__icon">🏃</div>
+                            <div class="health-card__content">
+                                <div class="health-card__label">Activity</div>
+                                <div class="health-card__value">75%</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                                <div class="health-card__status status--success">Good</div>
+                            </div>
+                        </div>
+                        
+                        <div class="health-card">
+                            <div class="health-card__icon">😴</div>
+                            <div class="health-card__content">
+                                <div class="health-card__label">Sleep</div>
+                                <div class="health-card__value">82%</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 82%"></div>
+                                </div>
+                                <div class="health-card__status status--success">Excellent</div>
+                            </div>
+                        </div>
+                        
+                        <div class="health-card">
+                            <div class="health-card__icon">❤️</div>
+                            <div class="health-card__content">
+                                <div class="health-card__label">Wellness</div>
+                                <div class="health-card__value">68%</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 68%"></div>
+                                </div>
+                                <div class="health-card__status status--warning">Good</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vital Signs -->
+                <div class="vital-signs">
+                    <h2>Vital Signs</h2>
+                    <div class="vital-cards">
+                        <div class="vital-card">
+                            <div class="vital-card__header">
+                                <span class="vital-card__label">Heart Rate</span>
+                                <span class="vital-card__status status--success">Normal</span>
+                            </div>
+                            <div class="vital-card__value">95 <span class="unit">BPM</span></div>
+                            <div class="vital-card__range">Normal: 80-120 BPM</div>
+                        </div>
+                        
+                        <div class="vital-card">
+                            <div class="vital-card__header">
+                                <span class="vital-card__label">Temperature</span>
+                                <span class="vital-card__status status--success">Normal</span>
+                            </div>
+                            <div class="vital-card__value">101.5 <span class="unit">°F</span></div>
+                            <div class="vital-card__range">Normal: 100.5-102.5°F</div>
+                        </div>
+                        
+                        <div class="vital-card">
+                            <div class="vital-card__header">
+                                <span class="vital-card__label">Weight</span>
+                                <span class="vital-card__status status--success">Stable</span>
+                            </div>
+                            <div class="vital-card__value">28.5 <span class="unit">lbs</span></div>
+                            <div class="vital-card__change">+0.5 lbs from last visit</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Activity Chart -->
+                <div class="health-chart">
+                    <h2>Activity Trends</h2>
+                    <div class="chart-container" style="position: relative; height: 300px;">
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Vaccination Schedule -->
+                <div class="vaccination-schedule">
+                    <h2>Vaccination Schedule</h2>
+                    <div class="vaccination-list">
+                        <div class="vaccination-item">
+                            <div class="vaccination-info">
+                                <div class="vaccination-name">Rabies</div>
+                                <div class="vaccination-doctor">Dr. Sarah Smith</div>
+                            </div>
+                            <div class="vaccination-date">Due: March 15, 2025</div>
+                            <div class="vaccination-status status--success">Current</div>
+                        </div>
+                        
+                        <div class="vaccination-item">
+                            <div class="vaccination-info">
+                                <div class="vaccination-name">DHPP</div>
+                                <div class="vaccination-doctor">Dr. Michael Johnson</div>
+                            </div>
+                            <div class="vaccination-date">Due: January 20, 2025</div>
+                            <div class="vaccination-status status--warning">Due Soon</div>
+                        </div>
+                        
+                        <div class="vaccination-item">
+                            <div class="vaccination-info">
+                                <div class="vaccination-name">Bordetella</div>
+                                <div class="vaccination-doctor">Dr. Emily Brown</div>
+                            </div>
+                            <div class="vaccination-date">Due: December 1, 2024</div>
+                            <div class="vaccination-status status--error">Overdue</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Alerts -->
+                <div class="health-alerts">
+                    <h2>Health Alerts & Reminders</h2>
+                    <div class="alert-list">
+                        <div class="alert-item alert--medium">
+                            <div class="alert-icon">💉</div>
+                            <div class="alert-content">
+                                <div class="alert-title">Vaccination Due Soon</div>
+                                <div class="alert-message">DHPP vaccination due in 2 weeks</div>
+                                <div class="alert-date">January 20, 2025</div>
+                            </div>
+                            <button class="btn btn--sm btn--primary">Schedule</button>
+                        </div>
+                        
+                        <div class="alert-item alert--high">
+                            <div class="alert-icon">💊</div>
+                            <div class="alert-content">
+                                <div class="alert-title">Medication Reminder</div>
+                                <div class="alert-message">Morning medication reminder</div>
+                                <div class="alert-date">Today, 8:00 AM</div>
+                            </div>
+                            <button class="btn btn--sm btn--primary">Mark Given</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pet Appointments Page -->
+    <main class="page" id="appointments">
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#" data-page="services">Services</a> &gt; > Pet Appointments
+                </div>
+                <h1 class="page-title">Book Pet Appointment</h1>
+                <p class="page-description">Schedule an appointment with our dog and cat specialists</p>
+            </div>
+        </section>
+        
+        <section class="form-section">
+            <div class="container">
+                <div class="form-container">
+                    <form id="appointmentForm" class="service-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="petName">Pet Name *</label>
+                                <input type="text" id="petName" class="form-control" placeholder="Enter your pet's name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="petType">Pet Type *</label>
+                                <select id="petType" class="form-control" required>
+                                    <option value="">Select pet type...</option>
+                                    <option value="Dog">Dog</option>
+                                    <option value="Cat">Cat</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="issueDescription">Issue/Symptoms Description *</label>
+                            <textarea id="issueDescription" class="form-control" rows="4" placeholder="Please describe the symptoms, concerns, or reason for the visit..." required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="doctorSelect">Select Doctor *</label>
+                                <select id="doctorSelect" class="form-control" required>
+                                    <option value="">Choose a doctor...</option>
+                                    <option value="dr_smith">Dr. Sarah Smith - General Veterinarian</option>
+                                    <option value="dr_johnson">Dr. Michael Johnson - Veterinary Surgeon</option>
+                                    <option value="dr_brown">Dr. Emily Brown - Dog & Cat Specialist</option>
+                                    <option value="dr_davis">Dr. James Davis - Emergency Care Specialist</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="urgencyLevel">Urgency Level *</label>
+                                <select id="urgencyLevel" class="form-control" required>
+                                    <option value="">Select urgency...</option>
+                                    <option value="low">Low - Routine checkup</option>
+                                    <option value="medium">Medium - Moderate concern</option>
+                                    <option value="high">High - Urgent care needed</option>
+                                    <option value="emergency">Emergency - Immediate attention</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="appointmentDate">Preferred Date *</label>
+                                <input type="date" id="appointmentDate" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="appointmentTime">Preferred Time *</label>
+                                <select id="appointmentTime" class="form-control" required>
+                                    <option value="">Select time...</option>
+                                    <option value="9:00 AM">9:00 AM</option>
+                                    <option value="9:30 AM">9:30 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="10:30 AM">10:30 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="11:30 AM">11:30 AM</option>
+                                    <option value="1:00 PM">1:00 PM</option>
+                                    <option value="1:30 PM">1:30 PM</option>
+                                    <option value="2:00 PM">2:00 PM</option>
+                                    <option value="2:30 PM">2:30 PM</option>
+                                    <option value="3:00 PM">3:00 PM</option>
+                                    <option value="3:30 PM">3:30 PM</option>
+                                    <option value="4:00 PM">4:00 PM</option>
+                                    <option value="4:30 PM">4:30 PM</option>
+                                    <option value="5:00 PM">5:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--lg">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pet Adoption Page -->
+    <main class="page" id="adoption">
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#" data-page="services">Services</a> > Pet Adoption
+                </div>
+                <h1 class="page-title">Dog & Cat Adoption Request</h1>
+                <p class="page-description">Help a dog or cat find their forever home</p>
+            </div>
+        </section>
+        
+        <section class="form-section">
+            <div class="container">
+                <div class="form-container">
+                    <div id="petDetailsForm">
+                        <h3>Pet Information</h3>
+                        <form id="adoptionPetForm" class="service-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="adoptPetName">Pet Name *</label>
+                                    <input type="text" id="adoptPetName" class="form-control" placeholder="Enter pet's name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="adoptPetType">Pet Type *</label>
+                                    <select id="adoptPetType" class="form-control" required>
+                                        <option value="">Select pet type...</option>
+                                        <option value="Dog">Dog</option>
+                                        <option value="Cat">Cat</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="adoptPetAge">Pet Age (Years) *</label>
+                                    <input type="number" id="adoptPetAge" class="form-control" placeholder="Age in years" min="0" max="30" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="adoptPetBreed">Pet Breed *</label>
+                                    <select id="adoptPetBreed" class="form-control" required>
+                                        <option value="">First select pet type...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row" id="dogSizeRow" class="hidden">
+                                <div class="form-group">
+                                    <label class="form-label" for="adoptDogSize">Dog Size *</label>
+                                    <select id="adoptDogSize" class="form-control">
+                                        <option value="">Select size...</option>
+                                        <option value="Small (under 25 lbs)">Small (under 25 lbs)</option>
+                                        <option value="Medium (25-60 lbs)">Medium (25-60 lbs)</option>
+                                        <option value="Large (60-90 lbs)">Large (60-90 lbs)</option>
+                                        <option value="Extra Large (over 90 lbs)">Extra Large (over 90 lbs)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="adoptPetCondition">Pet Condition *</label>
+                                    <select id="adoptPetCondition" class="form-control" required>
+                                        <option value="">Select condition...</option>
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good">Good</option>
+                                        <option value="fair">Fair</option>
+                                        <option value="special-needs">Special Needs</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row" id="catTypeRow" class="hidden">
+                                <div class="form-group">
+                                    <label class="form-label" for="adoptCatType">Cat Type *</label>
+                                    <select id="adoptCatType" class="form-control">
+                                        <option value="">Select type...</option>
+                                        <option value="Indoor Only">Indoor Only</option>
+                                        <option value="Outdoor Access">Outdoor Access</option>
+                                        <option value="Indoor/Outdoor">Indoor/Outdoor</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="adoptPetCondition2">Pet Condition *</label>
+                                    <select id="adoptPetCondition2" class="form-control" required>
+                                        <option value="">Select condition...</option>
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good">Good</option>
+                                        <option value="fair">Fair</option>
+                                        <option value="special-needs">Special Needs</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="adoptPetTemperament">Temperament *</label>
+                                <select id="adoptPetTemperament" class="form-control" required>
+                                    <option value="">Select temperament...</option>
+                                    <option value="friendly">Friendly</option>
+                                    <option value="calm">Calm</option>
+                                    <option value="energetic">Energetic</option>
+                                    <option value="shy">Shy</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="adoptSpecialRequirements">Special Requirements</label>
+                                <textarea id="adoptSpecialRequirements" class="form-control" rows="3" placeholder="Any special care requirements, medical needs, or behavioral notes..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary btn--lg">Continue to Adopter Info</button>
+                        </form>
+                    </div>
+                    
+                    <div id="adopterDetailsForm" class="hidden">
+                        <h3>Adopter Information</h3>
+                        <form id="adopterForm" class="service-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="adopterName">Full Name *</label>
+                                    <input type="text" id="adopterName" class="form-control" placeholder="Enter your full name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="adopterEmail">Email Address *</label>
+                                    <input type="email" id="adopterEmail" class="form-control" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="adopterPhone">Phone Number *</label>
+                                    <input type="tel" id="adopterPhone" class="form-control" placeholder="Enter your phone number" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="adopterHousing">Housing Type *</label>
+                                    <select id="adopterHousing" class="form-control" required>
+                                        <option value="">Select housing type...</option>
+                                        <option value="apartment">Apartment</option>
+                                        <option value="house-small-yard">House with Small Yard</option>
+                                        <option value="house-large-yard">House with Large Yard</option>
+                                        <option value="farm">Farm</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="adopterAddress">Address *</label>
+                                <textarea id="adopterAddress" class="form-control" rows="2" placeholder="Enter your full address" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="adopterExperience">Experience with Dogs/Cats *</label>
+                                <textarea id="adopterExperience" class="form-control" rows="3" placeholder="Describe your experience with dogs or cats..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="adopterReason">Reason for Adoption *</label>
+                                <textarea id="adopterReason" class="form-control" rows="3" placeholder="Why do you want to adopt this pet?" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary btn--lg">Submit Adoption Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Diet Planner Page -->
+    <main class="page" id="diet-planner">
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#" data-page="services">Services</a> > Diet Planner
+                </div>
+                <h1 class="page-title">Dog & Cat Nutrition Planner</h1>
+                <p class="page-description">Create breed-specific nutrition plans for your dog or cat</p>
+            </div>
+        </section>
+        
+        <section class="form-section">
+            <div class="container">
+                <div class="form-container">
+                    <form id="dietPlannerForm" class="service-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="dietPetName">Pet Name *</label>
+                                <input type="text" id="dietPetName" class="form-control" placeholder="Enter your pet's name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="dietPetType">Pet Type *</label>
+                                <select id="dietPetType" class="form-control" required>
+                                    <option value="">Select pet type...</option>
+                                    <option value="Dog">Dog</option>
+                                    <option value="Cat">Cat</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="dietPetAge">Pet Age (Years) *</label>
+                                <input type="number" id="dietPetAge" class="form-control" placeholder="Age in years" min="0" max="30" step="0.1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="dietPetBreed">Pet Breed *</label>
+                                <select id="dietPetBreed" class="form-control" required>
+                                    <option value="">First select pet type...</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="dietPetWeight">Current Weight (lbs) *</label>
+                                <input type="number" id="dietPetWeight" class="form-control" placeholder="Weight in pounds" min="0.5" step="0.1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="dietActivityLevel">Activity Level *</label>
+                                <select id="dietActivityLevel" class="form-control" required>
+                                    <option value="">Select activity level...</option>
+                                    <option value="low">Low - Mostly sedentary</option>
+                                    <option value="moderate">Moderate - Regular walks/play</option>
+                                    <option value="high">High - Very active/working animal</option>
+                                    <option value="very-high">Very High - Athletic/intensive work</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="dietHealthCondition">Health Condition *</label>
+                            <select id="dietHealthCondition" class="form-control" required>
+                                <option value="">Select health condition...</option>
+                                <option value="none">None - Healthy</option>
+                                <option value="diabetes">Diabetes</option>
+                                <option value="kidney-disease">Kidney Disease</option>
+                                <option value="heart-disease">Heart Disease</option>
+                                <option value="allergies">Allergies</option>
+                                <option value="obesity">Obesity</option>
+                                <option value="digestive-issues">Digestive Issues</option>
+                                <option value="joint-problems">Joint Problems</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--lg">Generate Nutrition Plan</button>
+                    </form>
+                </div>
+                
+                <div id="dietPlanResult" class="hidden">
+                    <div class="diet-plan-container">
+                        <h3>Personalized Nutrition Plan</h3>
+                        <div id="dietPlanContent"></div>
+                        <div id="foodWarnings" class="food-warnings">
+                            <h4>⚠️ Food Safety Warnings</h4>
+                            <div id="warningsList"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Page -->
+    <main class="page" id="login">
+        <section class="auth">
+            <div class="auth__container">
+                <div class="auth__header">
+                    <h1 class="auth__title">Welcome Back</h1>
+                    <p class="auth__subtitle">Sign in to your pet healthcare account</p>
+                </div>
+                <form class="auth__form" id="loginForm" novalidate>
+                    <div class="form-group">
+                        <label class="form-label" for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Sign In</button>
+                    <div class="auth__links">
+                        <a href="#" class="auth__link" data-page="signup">Don't have an account? Sign up</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Signup Page -->
+    <main class="page" id="signup">
+        <section class="auth">
+            <div class="auth__container">
+                <div class="auth__header">
+                    <h1 class="auth__title">Create Account</h1>
+                    <p class="auth__subtitle">Join our dog and cat healthcare community</p>
+                </div>
+                <form class="auth__form" id="signupForm" novalidate>
+                    <div class="form-group">
+                        <label class="form-label" for="signupName">Full Name</label>
+                        <input type="text" id="signupName" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" class="form-control" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signupPhone">Phone Number</label>
+                        <input type="tel" id="signupPhone" class="form-control" placeholder="Enter your phone number" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Create Account</button>
+                    <div class="auth__links">
+                        <a href="#" class="auth__link" data-page="login">Already have an account? Sign in</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal hidden">
+        <div class="modal__overlay">
+            <div class="modal__content">
+                <div class="modal__header">
+                    <h3 id="modalTitle" class="modal__title">Success</h3>
+                </div>
+                <div class="modal__body">
+                    <p id="modalMessage" class="modal__message"></p>
+                    <div id="confirmationDetails" class="confirmation-details"></div>
+                </div>
+                <div class="modal__footer">
+                    <button id="modalClose" class="btn btn--primary">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script> 
+<script>
+    const API_URL = "http://localhost:5000/api"; // Base URL for all API calls
+
+    // Helper to get the JWT token from localStorage
+    function getToken() {
+        return localStorage.getItem("token");
+    }
+
+    // Helper to get the logged-in user data
+    function getUser() {
+        const userJson = localStorage.getItem("user");
+        return userJson ? JSON.parse(userJson) : null;
+    }
+    
+    // Helper function for authorized fetches
+    async function authorizedFetch(url, options = {}) {
+        const token = getToken();
+        if (!token && !url.includes('/auth/')) {
+            alert('You must be logged in to perform this action.');
+            window.petHealthcareApp.showPage('login');
+            return null;
+        }
+
+        options.headers = {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            ...options.headers,
+        };
+        
+        const res = await fetch(url, options);
+        if (res.status === 401 || res.status === 400 && url.includes('auth')) {
+            // Handle expired/invalid token or auth error
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            if (url.includes('/auth/login') || url.includes('/auth/register')) {
+                // Ignore for initial login/register attempt
+            } else {
+                alert("Session expired or invalid. Please log in again.");
+                window.petHealthcareApp.showPage('login');
+                return null;
+            }
+        }
+        return res;
+    }
+
+
+    // ===== SIGNUP (Register) =====
+    const signupForm = document.getElementById("signupForm");
+    signupForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("signupName").value;
+        const email = document.getElementById("signupEmail").value;
+        const password = document.getElementById("signupPassword").value;
+        const phone = document.getElementById("signupPhone").value;
+        try {
+            const res = await fetch(`${API_URL}/auth/register`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ name, email, password, phone })
+            });
+            const data = await res.json();
+            if(!res.ok) alert(data.msg || "Registration failed.");
+            else { 
+                alert(data.msg); 
+                signupForm.reset(); 
+                window.petHealthcareApp.showPage('login'); // Redirect to login
+            }
+        } catch(err) { console.error(err); alert("Server error during registration."); }
+    });
+
+    // ===== LOGIN =====
+    const loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+        try {
+            const res = await fetch(`${API_URL}/auth/login`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ email, password })
+            });
+            const data = await res.json();
+            if(!res.ok) {
+                alert(data.msg || "Login failed.");
+            } else { 
+                localStorage.setItem("token", data.token);
+                // Fetch user details with the new token
+                const userRes = await authorizedFetch(`${API_URL}/auth/me`);
+                if(userRes && userRes.ok) {
+                    const userData = await userRes.json();
+                    localStorage.setItem("user", JSON.stringify(userData));
+                    alert(`Welcome, ${userData.name}!`); 
+                    loginForm.reset();
+                    window.petHealthcareApp.showPage('services'); // Redirect to services page
+                } else {
+                    alert("Login success, but failed to fetch user data.");
+                }
+            }
+        } catch(err) { console.error(err); alert("Server error during login."); }
+    });
+
+
+    // ===== APPOINTMENT =====
+    const appointmentForm = document.getElementById("appointmentForm");
+    appointmentForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const petName = document.getElementById("petName").value;
+        const petType = document.getElementById("petType").value;
+        const issue = document.getElementById("issueDescription").value;
+        const doctor = document.getElementById("doctorSelect").value;
+        const urgency = document.getElementById("urgencyLevel").value;
+        const date = document.getElementById("appointmentDate").value;
+        const time = document.getElementById("appointmentTime").value;
+        
+        if (!window.petHealthcareApp.validateForm(e.target)) return;
+
+        try {
+            const res = await authorizedFetch(`${API_URL}/appointments`, {
+                method: "POST",
+                body: JSON.stringify({ petName, petType, issue, doctor, urgency, date, time })
+            });
+            if (res && res.ok) {
+                const data = await res.json();
+                
+                // Show success modal (use the existing logic in handleAppointment to generate details)
+                window.petHealthcareApp.handleAppointmentSuccess(e.target, data.appointment);
+                
+                appointmentForm.reset(); 
+            } else if (res) {
+                const data = await res.json();
+                alert(data.msg || "Failed to book appointment.");
+            }
+        } catch(err) { console.error(err); alert("Network or Server error booking appointment."); }
+    });
+
+
+    // ===== ADOPTION FORM SWITCH (Stays the same - purely client-side state) =====
+    const adoptionPetForm = document.getElementById("adoptionPetForm");
+    const petDetailsForm = document.getElementById("petDetailsForm");
+    const adopterDetailsForm = document.getElementById("adopterDetailsForm");
+
+    // When "Continue to Adopter Info" button is clicked
+    adoptionPetForm.addEventListener("submit", (e) => {
+        // Prevent default submission, let PetHealthcareApp handle validation and switching
+        // This is handled by handleAdoptionPet in the class below
+    });
+
+    // ===== ADOPTER FORM SUBMISSION (Submission to Backend) =====
+    const adopterForm = document.getElementById("adopterForm");
+
+    adopterForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // 1. Get tempPetData set by handleAdoptionPet
+        const petData = window.petHealthcareApp.tempPetData;
+        
+        // 2. Collect fields from Adopter Form
+        const adopterData = {
+            adopterName: document.getElementById("adopterName").value,
+            adopterEmail: document.getElementById("adopterEmail").value,
+            adopterPhone: document.getElementById("adopterPhone").value,
+            // You might send more fields like housing/experience, but let's stick to the backend's expected fields for now
+        };
+
+        if (!window.petHealthcareApp.validateForm(e.target)) return;
+
+        // Send to backend (merging pet and adopter info)
+        try {
+            const res = await authorizedFetch(`${API_URL}/adoptions`, {
+                method: "POST",
+                body: JSON.stringify({ 
+                    ...petData, // petName, petType, breed, age, etc.
+                    ...adopterData // adopterName, adopterEmail, adopterPhone
+                })
+            });
+
+            if (res && res.ok) {
+                const data = await res.json();
+                
+                // Show success modal and reset forms via method in PetHealthcareApp
+                window.petHealthcareApp.handleAdopterSuccess(data.request);
+                
+            } else if (res) {
+                const data = await res.json();
+                alert(data.msg || "Adoption request submission failed.");
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Network or Server error submitting adoption request.");
+        }
+    });
+
+</script>
+
+</body>
+</html>

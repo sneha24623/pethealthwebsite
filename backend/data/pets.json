@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "Buddy", "species": "Dog", "adopted": false },
+  { "id": 2, "name": "Mittens", "species": "Cat", "adopted": false },
+  { "id": 3, "name": "Charlie", "species": "Dog", "adopted": false }
+]

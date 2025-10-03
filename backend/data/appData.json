@@ -1,0 +1,144 @@
+{
+  "users": [
+    {
+      "id": 1759511787024,
+      "name": "Sneha P Shet",
+      "email": "shetsneha70@gmail.com",
+      "password": "$2b$10$F.6PI9W3IeIAf9xaQsYwRe83I2Zj0iCXwMqKKYUJG4UaEEJ7uFJx.",
+      "phone": "06364130503"
+    }
+  ],
+  "petHealthData": {
+    "buddy": {
+      "name": "Buddy",
+      "type": "Dog",
+      "breed": "Golden Retriever",
+      "age": 3,
+      "weight": 28.5,
+      "size": "Medium (25-60 lbs)",
+      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRkZEQjAwIi8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDAiIHI9IjIwIiBmaWxsPSIjRkY4QzAwIi8+CjxjaXJjbGUgY3g9IjQzIiBjeT0iMzUiIHI9IjMiIGZpbGw9IiMwMDAiLz4KPGNpcmNsZSBjeD0iNTciIGN5PSIzNSIgcj0iMyIgZmlsbD0iIzAwMCIvPgo8ZWxsaXBzZSBjeD0iNTAiIGN5PSI0NSIgcng9IjQiIHJ5PSIyIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=",
+      "healthMetrics": {
+        "activity": 75,
+        "sleep": 82,
+        "wellness": 68
+      },
+      "vitalSigns": {
+        "heartRate": {
+          "value": 95,
+          "unit": "BPM",
+          "status": "Normal"
+        },
+        "temperature": {
+          "value": 101.5,
+          "unit": "°F",
+          "status": "Normal"
+        },
+        "weight": {
+          "value": 28.5,
+          "unit": "lbs",
+          "change": "+0.5",
+          "status": "Stable"
+        }
+      },
+      "activityData": [
+        65,
+        72,
+        80,
+        75,
+        85,
+        90,
+        75
+      ],
+      "lastCheckup": "2024-09-15",
+      "nextAppointment": "2025-01-15"
+    },
+    "whiskers": {
+      "name": "Whiskers",
+      "type": "Cat",
+      "breed": "Persian",
+      "age": 5,
+      "weight": 12.3,
+      "catType": "Indoor Only",
+      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDUiIHI9IjE4IiBmaWxsPSIjRTBFMEUwIi8+Cjxwb2x5Z29uIHBvaW50cz0iMzUsMzAgNDAsMjAgNDUsMzAiIGZpbGw9IiNFMEUwRTAiLz4KPHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI gdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjVGNUY1Ci8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDUiIHI9IjE4IiBmaWxsPSIjRTBFMEUwIi8+Cjxwb2x5Z29uIHBvaW50cz0iMzUsMzAgNDAsMjAgNDUsMzAiIGZpbGw9IiNFMEUwRTAiLz4KPC9zdmc+",
+      "healthMetrics": {
+        "activity": 60,
+        "sleep": 90,
+        "wellness": 85
+      },
+      "vitalSigns": {
+        "heartRate": {
+          "value": 180,
+          "unit": "BPM",
+          "status": "Normal"
+        },
+        "temperature": {
+          "value": 101.2,
+          "unit": "°F",
+          "status": "Normal"
+        },
+        "weight": {
+          "value": 12.3,
+          "unit": "lbs",
+          "change": "-0.2",
+          "status": "Stable"
+        }
+      },
+      "activityData": [
+        55,
+        60,
+        65,
+        58,
+        62,
+        70,
+        60
+      ],
+      "lastCheckup": "2024-08-20",
+      "nextAppointment": "2025-02-20"
+    },
+    "max": {
+      "name": "Max",
+      "type": "Dog",
+      "breed": "German Shepherd",
+      "age": 6,
+      "weight": 35.8,
+      "size": "Large (60-90 lbs)",
+      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjOEI0NTEzIi8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDAiIHI9IjIwIiBmaWxsPSIjNjUzNjExIi8+CjxjaXJjbGUgY3g9IjQzIiBjeT0iMzUiIHI9IjMiIGZpbGw9IiMwMDAiLz4KPGNpcmNsZSBjeD0iNTciIGN5PSIzNSIgcj0iMyIgZmlsbD0iIzAwMCIvPgo8ZWxsaXBzZSBjeD0iNTAiIGN5PSI0NSIgcng9IjQiIHJ5PSIyIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=",
+      "healthMetrics": {
+        "activity": 85,
+        "sleep": 75,
+        "wellness": 90
+      },
+      "vitalSigns": {
+        "heartRate": {
+          "value": 88,
+          "unit": "BPM",
+          "status": "Normal"
+        },
+        "temperature": {
+          "value": 101.8,
+          "unit": "°F",
+          "status": "Normal"
+        },
+        "weight": {
+          "value": 35.8,
+          "unit": "lbs",
+          "change": "+1.2",
+          "status": "Gaining"
+        }
+      },
+      "activityData": [
+        80,
+        85,
+        90,
+        88,
+        92,
+        95,
+        85
+      ],
+      "lastCheckup": "2024-10-01",
+      "nextAppointment": "2025-01-01"
+    }
+  },
+  "appointments": [],
+  "adoptionRequests": []
+}
